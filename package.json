@@ -1,6 +1,6 @@
 {
   "name": "nestjs-custom-injector-workspace",
-  "version": "2.2.3",
+  "version": "3.0.2",
   "description": "Custom injecting logic for NestJS with support multi providing",
   "keywords": [
     "nestjs",
@@ -51,7 +51,7 @@
     "tsc:lint": "tsc --noEmit -p tsconfig.base.json",
     "generate": "npm run rucken -- prepare && npm run lint:fix"
   },
-  "private": true,
+  "private": false,
   "devDependencies": {
     "@nestjs/schematics": "^10.2.3",
     "@nestjs/testing": "^10.4.15",
