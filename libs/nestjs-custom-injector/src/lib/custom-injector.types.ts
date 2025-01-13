@@ -1,4 +1,4 @@
-import { InstanceToken } from '@nestjs/core/injector/module';
+import { InjectionToken } from '@nestjs/common';
 
 export const CUSTOM_INJECTOR_METADATA = 'custom-injector:metadata';
 
@@ -20,7 +20,7 @@ export type InjectedProvidersStorageItem<
   E extends CustomInjectorError<T> = CustomInjectorError<T>
 > = {
   target: object;
-  token: InstanceToken;
+  token: InjectionToken;
   options?: InjectedProvidersStorageItemOptions<T, E>;
   instance: null | T | T[];
   appiled: boolean;

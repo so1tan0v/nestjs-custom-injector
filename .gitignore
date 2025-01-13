@@ -40,3 +40,4 @@ Thumbs.db
 
 jest.result.json
 package-lock.json
+yarn.lock

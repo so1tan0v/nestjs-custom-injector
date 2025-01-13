@@ -2,7 +2,7 @@ import { Abstract, Injectable, Scope, Type } from '@nestjs/common';
 import { DiscoveryService, ModulesContainer } from '@nestjs/core';
 import { STATIC_CONTEXT } from '@nestjs/core/injector/constants';
 import { InstanceWrapper } from '@nestjs/core/injector/instance-wrapper';
-import { InstanceToken } from '@nestjs/core/injector/module';
+import { InjectionToken } from '@nestjs/common';
 import {
   CustomInjectorError,
   CUSTOM_INJECTOR_METADATA,
@@ -31,28 +31,28 @@ export class CustomInjectorService {
   public getProvider<
     T,
     E extends CustomInjectorError<T> = CustomInjectorError<T>
-  >(token: InstanceToken, options?: GetProviderOptions<T, E>): T {
+  >(token: InjectionToken, options?: GetProviderOptions<T, E>): T {
     return this._getProvider<T, E>(token, options || {}, undefined);
   }
 
   public async getAsyncProvider<
     T,
     E extends CustomInjectorError<T> = CustomInjectorError<T>
-  >(token: InstanceToken, options?: GetProviderOptions<T, E>): Promise<T> {
+  >(token: InjectionToken, options?: GetProviderOptions<T, E>): Promise<T> {
     return this._getAsyncProvider<T, E>(token, options || {}, undefined);
   }
 
   public getProviders<
     T,
     E extends CustomInjectorError<T> = CustomInjectorError<T>
-  >(token: InstanceToken, options?: GetProvidersOptions<T, E>): T[] {
+  >(token: InjectionToken, options?: GetProvidersOptions<T, E>): T[] {
     return this._getProviders<T, E>(token, options || {}, undefined);
   }
 
   public async getAsyncProviders<
     T,
     E extends CustomInjectorError<T> = CustomInjectorError<T>
-  >(token: InstanceToken, options?: GetProvidersOptions<T, E>): Promise<T[]> {
+  >(token: InjectionToken, options?: GetProvidersOptions<T, E>): Promise<T[]> {
     return this._getAsyncProviders<T, E>(token, options || {}, undefined);
   }
 
@@ -60,7 +60,7 @@ export class CustomInjectorService {
     T,
     E extends CustomInjectorError<T> = CustomInjectorError<T>
   >(
-    token: InstanceToken,
+    token: InjectionToken,
     target: unknown,
     options: InjectedProvidersStorageItemOptions<T, E>
   ) {
@@ -152,7 +152,7 @@ export class CustomInjectorService {
     T,
     E extends CustomInjectorError<T> = CustomInjectorError<T>
   >(
-    token: InstanceToken,
+    token: InjectionToken,
     options: GetProviderOptions<T, E>,
     injectedProvidersStorageItem: InjectedProvidersStorageItem<T, E> | undefined
   ): T {
@@ -188,7 +188,7 @@ export class CustomInjectorService {
     T,
     E extends CustomInjectorError<T> = CustomInjectorError<T>
   >(
-    token: InstanceToken,
+    token: InjectionToken,
     options: GetProviderOptions<T, E>,
     injectedProvidersStorageItem: InjectedProvidersStorageItem<T, E> | undefined
   ): Promise<T> {
@@ -237,7 +237,7 @@ export class CustomInjectorService {
     T,
     E extends CustomInjectorError<T> = CustomInjectorError<T>
   >(
-    token: InstanceToken,
+    token: InjectionToken,
     options: GetProviderOptions<T, E>,
     injectedProvidersStorageItem: InjectedProvidersStorageItem<T, E> | undefined
   ) {
@@ -261,7 +261,7 @@ export class CustomInjectorService {
     T,
     E extends CustomInjectorError<T> = CustomInjectorError<T>
   >(
-    token: InstanceToken,
+    token: InjectionToken,
     options: GetProvidersOptions<T, E>,
     injectedProvidersStorageItem: InjectedProvidersStorageItem<T, E> | undefined
   ): T[] {
@@ -298,7 +298,7 @@ export class CustomInjectorService {
     T,
     E extends CustomInjectorError<T> = CustomInjectorError<T>
   >(
-    token: InstanceToken,
+    token: InjectionToken,
     options: GetProvidersOptions<T, E>,
     injectedProvidersStorageItem: InjectedProvidersStorageItem<T, E> | undefined
   ) {
@@ -322,7 +322,7 @@ export class CustomInjectorService {
     T,
     E extends CustomInjectorError<T> = CustomInjectorError<T>
   >(
-    token: InstanceToken,
+    token: InjectionToken,
     options: GetProvidersOptions<T, E>,
     injectedProvidersStorageItem: InjectedProvidersStorageItem<T, E> | undefined
   ): Promise<T[]> {
@@ -544,7 +544,7 @@ export class CustomInjectorService {
     T,
     E extends CustomInjectorError<T> = CustomInjectorError<T>
   >(
-    token: InstanceToken,
+    token: InjectionToken,
     injectedProvidersStorageItem?: InjectedProvidersStorageItem<T, E>,
     errorFactory?: (
       message: string,

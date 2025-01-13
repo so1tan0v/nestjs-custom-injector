@@ -17,11 +17,7 @@ async function bootstrap() {
 
   const packageJson: { version: string; name: string; description: string } =
     JSON.parse(readFileSync('./package.json').toString());
-  const config = new DocumentBuilder()
-    .setTitle(packageJson.name)
-    .setDescription(packageJson.description)
-    .setVersion(packageJson.version)
-    .build();
+  const config = new DocumentBuilder().setTitle(packageJson.name).build();
   const document = SwaggerModule.createDocument(app, config);
   SwaggerModule.setup(globalPrefix, app, document);
 

@@ -1,4 +1,4 @@
-import { InstanceToken } from '@nestjs/core/injector/module';
+import { InjectionToken } from '@nestjs/common';
 import { CustomInjectorService } from './custom-injector.service';
 import {
   CustomInjectorError,
@@ -19,7 +19,7 @@ export function CustomInjector() {
 export function CustomInject<
   T,
   E extends CustomInjectorError<T> = CustomInjectorError<T>
->(token: InstanceToken, options?: InjectedProvidersStorageItemOptions<T, E>) {
+>(token: InjectionToken, options?: InjectedProvidersStorageItemOptions<T, E>) {
   return function (target: object, propertyKey: string) {
     let injectedProvidersStorageItem = Reflect.getMetadata(
       `${CUSTOM_INJECTOR_METADATA}_${propertyKey}`,
