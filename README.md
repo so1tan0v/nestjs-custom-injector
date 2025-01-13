@@ -3,16 +3,20 @@
 [![npm version](https://badge.fury.io/js/nestjs-custom-injector.svg)](https://badge.fury.io/js/nestjs-custom-injector)
 [![monthly downloads](https://badgen.net/npm/dm/nestjs-custom-injector)](https://www.npmjs.com/package/nestjs-custom-injector)
 
+# Difference from EndyKaufman version
+
+This package has been updated for use in NestJS >=10
+
 ## Installation
 
 ```bash
-npm i --save nestjs-custom-injector
+npm i --save @so1tan0v/nestjs-custom-injector
 ```
 
 ## Links
 
 https://nestjs-custom-injector.site15.ru/api - Demo application with nestjs-custom-injector.
-https://github.com/EndyKaufman/nestjs-custom-injector-example - Example generated with nest cli for "Usage" sections in readme.
+https://github.com/so1tan0v/nestjs-custom-injector-example - Example generated with nest cli for "Usage" sections in readme.
 
 ## Usage
 

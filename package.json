@@ -1,6 +1,6 @@
 {
   "name": "nestjs-custom-injector-workspace",
-  "version": "3.0.2",
+  "version": "3.0.4",
   "description": "Custom injecting logic for NestJS with support multi providing",
   "keywords": [
     "nestjs",
