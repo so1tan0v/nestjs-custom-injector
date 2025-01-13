@@ -1,6 +1,6 @@
 {
   "name": "nestjs-custom-injector-workspace",
-  "version": "3.0.4",
+  "version": "3.0.5",
   "description": "Custom injecting logic for NestJS with support multi providing",
   "keywords": [
     "nestjs",
@@ -41,6 +41,7 @@
     "lib:release": "standard-version",
     "lib:publish": "npm publish ./dist/libs/nestjs-custom-injector",
     "lib:create-release": "npm run test && npm run lib:build && npm run lib:release && git push --follow-tags origin develop",
+    "lib:fast-create-release": "npm run lib:build && npm run lib:release && git push --follow-tags origin develop",
     "lib:build-changelog": "./node_modules/.bin/cp-cli ./CHANGELOG.md ./dist/libs/nestjs-custom-injector/CHANGELOG.md",
     "test": "jest --all --runInBand --detectOpenHandles --forceExit --passWithNoTests --reporters=default --includeConsoleOutput=true --json --outputFile=jest.result.json --testLocationInResults",
     "serve": "npm run nx -- serve demo",
